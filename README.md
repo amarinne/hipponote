@@ -1,3 +1,12 @@
 # hipponote
-a note taking app with delete, edit, tickbox function
-made to practise using html, css and javascript
+a simple note taking app made in vsc with html, css and js.
+
+functions include
+create note
+display note
+edit note
+delete note
+mark complete note
+clear all note
+
+demo: https://hipponote.netlify.app/hipponote.html
