@@ -1,0 +1,138 @@
+        html {
+            font-family: 'poppins', sans-serif;
+        }
+        h1 {
+            font-family: 'montserrat', sans-serif;
+
+        }
+
+        *{box-sizing: border-box;
+           margin: 0;
+           padding: 0;
+           transition-duration: 200ms;
+        }
+        body {
+            min-height: 100vh;  
+            background: #28273a;
+            color: gray;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        header, main, footer {
+            width: 800px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            flex: 1;
+        }
+        .plusIcon  {
+            font-size: 2rem;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            color: gray;
+        }
+        .hippoIcon {
+            font-size: 3rem;
+            cursor: pointer;
+            transition: filter 0.5s;
+        }
+        .hippoIcon:hover {
+            animation: changeColor 0.75s infinite;
+        }
+
+        @keyframes changeColor    {         /*rainbow color on hover*/
+            0%, 100% { color: #ff8783; }
+            10% { color: #f79279; }
+            20% { color: #F77028; }            
+            30% { color: #E5AF6F; }
+            40% { color: #D3EEB6; }
+            50% { color: #A9E5BB; }            
+            60% { color: #FCF6B1; }
+            70% { color: #FBE690; }
+            80% { color: #FAD56E; }
+            90% { color: #F7B32B; }
+        }
+        .plusIcon:hover {
+            color: cyan;
+        }
+        #enterTodo form {
+            display: flex;
+            align-items: stretch;
+            border: 1px solid skyblue;
+            position: relative;
+        }
+        #enterTodo form:focus-within {
+            border-color: aqua;
+        }
+        #enterTodo input {
+            background: #454270;
+            outline: none;
+            padding: 12px 12px;
+            flex: 1;
+            border: none;
+        }
+        #enterTodo button {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            background: skyblue;
+            border: none;
+            outline: none;
+            color: navy;
+            padding: 0 12px;
+            font-family: poppins;
+        }
+        #enterTodo button:hover {
+            background: transparent; 
+        }
+        #todos {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .todoItem {
+            display: flex;
+            align-items: center;
+        }
+        .todoItem p {
+            flex: 1;
+        }
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .actions i:hover{
+            color: cyan;
+        }
+        
+        .custom-checkbox input[type="checkbox"] { /* Hide the default checkbox */
+            display: none;
+        }
+        .custom-checkbox .checkbox-icon { /* Style the custom checkbox icon */
+            font-size: 20px; /* Adjust the icon size */
+            color: #365664; /* Default icon color */
+            cursor: pointer;
+            padding: 6px;
+        }
+        .custom-checkbox input[type="checkbox"]:checked + .checkbox-icon::before {/* Define the styles for the custom checkbox when it's checked */
+            content: "\f14a"; /* Unicode character for the checked FontAwesome icon */
+            color: cyan; /* Change the icon color when checked */
+        }
+        .todoItem:hover {
+            color: white;
+        }
