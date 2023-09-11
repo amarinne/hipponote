@@ -3,6 +3,9 @@
     const todoInput = document.getElementById('textInput');
     const inputButton = document.getElementById('add');
     const clearButton = document.getElementById('clearButton');
+    
+    const apiKey = '3118e57e449a473bafd145849231009'
+    const apiUrl = ''
 
     document.addEventListener('DOMContentLoaded', () => { // load from localStorage 
         const storedTodos = localStorage.getItem('todos');
@@ -85,3 +88,23 @@
 
     clearButton.addEventListener('click', clearAllData);
     renderTodos();
+    
+    function updateTime() {
+        const currentTime = new Date();
+        const hours = currentTime.getHours().toString().padStart(2, '0');
+        const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+        const seconds = currentTime.getSeconds().toString().padStart(2, '0'); 
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = currentTime.toLocaleDateString(undefined, options);
+        const timeString = `${hours}:${minutes}:${seconds}`;
+
+        document.getElementById('time').textContent = timeString;
+        document.getElementById('date').textContent = dateString;
+    }
+    setInterval(updateTime, 1000); // Update the clock every second (1000 milliseconds)
+    window.onload = updateTime; // Initialize the clock when the page loads
+
+
+
+
+
